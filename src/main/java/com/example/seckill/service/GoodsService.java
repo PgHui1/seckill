@@ -1,11 +1,9 @@
 package com.example.seckill.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.example.seckill.mapper.GoodsMapper;
 import com.example.seckill.pojo.Goods;
-import com.example.seckill.vo.GoodsVo;
+import com.example.seckill.vo.GoodsVO;
 
-import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -19,7 +17,7 @@ import java.util.List;
 public interface GoodsService extends IService<Goods> {
 
 
-    List<GoodsVo> findGoodsVo();
+    List<GoodsVO> findGoodsVo();
 
-    GoodsVo findGoodsVobyGoodsId(Long goodsId);
+    GoodsVO findGoodsVobyGoodsId(Long goodsId);
 }

@@ -3,17 +3,14 @@ package com.example.seckill.service.impl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.example.seckill.pojo.Order;
 import com.example.seckill.mapper.OrderMapper;
-import com.example.seckill.pojo.Order;
 import com.example.seckill.pojo.SeckillGoods;
 import com.example.seckill.pojo.User;
 import com.example.seckill.service.OrderService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.example.seckill.service.SeckillGoodsService;
-import com.example.seckill.vo.GoodsVo;
+import com.example.seckill.vo.GoodsVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.Date;
 
 
 /**
@@ -33,7 +30,7 @@ public class OrderServiceImp extends ServiceImpl<OrderMapper, Order> implements 
     OrderMapper orderMapper;
 
     @Override
-    public Order seckill(User user, GoodsVo goods) {
+    public Order seckill(User user, GoodsVO goods) {
         /*获取秒杀表里的商品信息*/
         SeckillGoods seckillGoods = seckillGoodsService.getOne(new
                 QueryWrapper<SeckillGoods>().eq("goods_id",

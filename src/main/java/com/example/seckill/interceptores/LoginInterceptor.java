@@ -3,6 +3,7 @@ package com.example.seckill.interceptores;
 import com.example.seckill.pojo.User;
 import com.example.seckill.service.UserService;
 import com.example.seckill.utils.CookieUtil;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.CookieValue;
@@ -16,6 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.Arrays;
 
 @Component
+@Slf4j
 public class LoginInterceptor implements HandlerInterceptor {
 
     @Resource
@@ -23,6 +25,7 @@ public class LoginInterceptor implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+        log.info("拦截的路径为"+request.getRequestURI());
         Cookie cookie = null;
         Cookie[] cookies = request.getCookies();
         if (null == cookies){

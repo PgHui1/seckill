@@ -1,13 +1,10 @@
 package com.example.seckill.mapper;
 
-import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.example.seckill.pojo.Goods;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.example.seckill.vo.GoodsVo;
-import org.apache.ibatis.annotations.Mapper;
+import com.example.seckill.vo.GoodsVO;
 
 import java.util.List;
-import java.util.Map;
 
 /**
  * <p>
@@ -19,7 +16,7 @@ import java.util.Map;
  */
 
 public interface GoodsMapper extends BaseMapper<Goods> {
-    List<GoodsVo> findGoodsVo();
+    List<GoodsVO> findGoodsVo();
 
-    GoodsVo findGoodsVobyGoodsId(Long goodsId);
+    GoodsVO findGoodsVobyGoodsId(Long goodsId);
 }

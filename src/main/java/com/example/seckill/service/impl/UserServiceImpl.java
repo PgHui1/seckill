@@ -8,6 +8,7 @@ import com.example.seckill.service.UserService;
 import com.example.seckill.utils.*;
 import com.example.seckill.vo.LoginVO;
 import com.sun.deploy.net.HttpResponse;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.http.HttpRequest;
@@ -28,6 +29,7 @@ import javax.servlet.http.HttpServletResponse;
  * @since 2022-05-14
  */
 @Service
+@Slf4j
 public class UserServiceImpl extends ServiceImpl<UserMapper,User> implements UserService {
 
     @Resource
@@ -71,6 +73,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper,User> implements Use
     /*根据cookie获取用户*/
     @Override
     public User getByUserTicket(String userTicket, HttpServletRequest request, HttpServletResponse response) {
+        log.info("userTicket="+userTicket);
         if (StringUtils.isEmpty(userTicket)) {
             return null;
         }

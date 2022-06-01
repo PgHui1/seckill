@@ -14,6 +14,7 @@ function g_getQueryString(name) {
 };
 //设定时间格式化函数，使用new Date().format("yyyy-MM-dd HH:mm:ss");
 Date.prototype.formate = function (format) {
+	console.log("添加日期格式化")
 	var args = {
 		"M+": this.getMonth() + 1,
 		"d+": this.getDate(),

@@ -1,8 +1,5 @@
 package com.example.seckill.vo;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.example.seckill.pojo.Goods;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -10,7 +7,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 @ApiModel("商品返回对象")
-public class GoodsVo {
+public class GoodsVO {
 
     @ApiModelProperty("商品id")
     private Long id;
@@ -44,10 +41,10 @@ public class GoodsVo {
     @ApiModelProperty("结束时间")
     private Date endDate;
 
-    public GoodsVo() {
+    public GoodsVO() {
     }
 
-    public GoodsVo(Long id, String goodsName, String goodsTitle, String goodsImg, String goodsDetail, BigDecimal goodsPrice, BigDecimal seckillPrice, Integer stockCount, Date startDate, Date endDate) {
+    public GoodsVO(Long id, String goodsName, String goodsTitle, String goodsImg, String goodsDetail, BigDecimal goodsPrice, BigDecimal seckillPrice, Integer stockCount, Date startDate, Date endDate) {
         this.id = id;
         this.goodsName = goodsName;
         this.goodsTitle = goodsTitle;
